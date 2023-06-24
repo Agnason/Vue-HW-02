@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- header -->
+    <div class="header center">
+        <div class="header_logo">
+            <img src="img/Logo.svg" alt="Logo">
+            <a href="#">Interno</a>
+        </div>
+        <div class="header_menubar">
+            <a href="#">Home</a>
+            <a href="#">Project</a>
+            <a href="#">Blog</a>
+        </div>
+    </div>
+    <!-- banner -->
+    <div class="banner">
+        <img class="banner__blog-img" src="img/Banner_blog.jpg" alt="Banner_blog">
+        <div class="intro">
+            <h3 class="heading">Articles & News</h3>
+            <p class="text">Home / Blog</p>
+        </div>
+    </div>
+
+    <h3 class="heading  center textAlignLeft margin-bottom-30">Latest Post</h3>
+
+    <div class="post center">
+        <img src="img/Blog_post_img.png" alt="Blog_post_img">
+        <div class="post__rigth">
+            <h2 class="project__item-bottom-heading">Low Cost Latest Invented Interior Designing Ideas</h2>
+            <p class="text">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere
+                in.Contrary
+                to popular
+                belief.</p>
+            <p class="text">Lorem Ipsum is not simply random text. It has roots in a piece of classica.</p>
+            <div class="project__item-bottom">
+
+                <div class="project__item-bottom-left">
+                    <p class="text">26 December,2022</p>
+                </div>
+                <img src="img/icon.svg" alt="item.imgSrcIconAlt" class="project__item-bottom-icon">
+            </div>
+        </div>
+
+    </div>
+
+    <h3 class="heading  center textAlignLeft margin-bottom-30">Articles & News</h3>
+    <!-- секция блога -->
+    <div id="app" class="blog center">
+        <!-- картинка блога -->
+        <div class="blog__wrapper" v-for="item in items" :key="item.id">
+            <div class="blog__item">
+                <img :src="item.imgSrc" :alt="item.imgAlt" class="blog__item-img">
+                <h3 class="blog__item-title">{{ item.itemTitle }}</h3>
+                <div class="project__item-bottom">
+                    <div class="project__item-bottom-left">
+                        <p class="text">{{ item.itemText }}</p>
+                    </div>
+                    <img :src="item.imgSrcIcon" :alt="item.imgSrcIconAlt" class="project__item-bottom-icon">
+                </div>
+                <!-- кнопка-тэг -->
+                <button class="blog__item-btn">{{ item.btnText }}</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+
+    <div class="footer center">
+        <div class="footer__logo">
+            <div class="header_logo">
+                <img src="img/Logo.svg" alt="Logo">
+                <a href="#">Interno</a>
+            </div>
+            <p class="text">It is a long established fact that a reader will be distracted lookings.</p>
+            <img src="img/icon_facebook.svg" alt="icon_facebook">
+        </div>
+
+        <div class="footer__pages">
+            <p class="text">Pages</p>
+            <p class="text">Home</p>
+            <p class="text">Project</p>
+            <p class="text">Blog</p>
+        </div>
+
+        <div class="footer__contact">
+            <p class="text">Contact</p>
+            <p class="text">55 East Birchwood Ave. Brooklyn, New York 11201</p>
+            <p class="text">contact@interno.com</p>
+            <p class="text">(123) 456 - 7890</p>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="blogVue.js"></script>
+</body>
+
+</html>
