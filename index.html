@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!-- header -->
     <div class="header center">
         <div class="header_logo">
             <img src="img/Logo.svg" alt="Logo">
@@ -138,67 +139,25 @@
     </div>
 
     <!-- секция блога -->
-    <div class="blog center">
-        <!-- 1 картинка блога -->
-        <div class="blog__wrapper">
 
+    <div id="app" class="blog center">
+        <!-- картинка блога -->
+        <div class="blog__wrapper" v-for="item in items" :key="item.id">
             <div class="blog__item">
-                <img src="img/Blog_Image01.png" alt="Blog_Image01" class="blog__item-img">
-                <h3 class="blog__item-title">Let’s Get Solution For Building Construction Work</h3>
-
+                <img :src="item.imgSrc" :alt="item.imgAlt" class="blog__item-img">
+                <h3 class="blog__item-title">{{ item.itemTitle }}</h3>
                 <div class="project__item-bottom">
                     <div class="project__item-bottom-left">
-
-                        <p class="project__item-bottom-text">26 December,2022</p>
+                        <p class="text">{{ item.itemText }}</p>
                     </div>
-
-                    <img src="img/icon.svg" alt="icon" class="project__item-bottom-icon">
+                    <img :src="item.imgSrcIcon" :alt="item.imgSrcIconAlt" class="project__item-bottom-icon">
                 </div>
                 <!-- кнопка-тэг -->
-                <button class="blog__item-btn">Kitchan Design</button>
-            </div>
-        </div>
-
-        <!-- 2 картинка блога -->
-        <div class="blog__wrapper">
-
-            <div class="blog__item">
-                <img src="img/Blog_Image02.png" alt="Blog_Image02" class="blog__item-img">
-                <h3 class="blog__item-title">Low Cost Latest Invented Interior Designing Ideas.</h3>
-
-                <div class="project__item-bottom">
-                    <div class="project__item-bottom-left">
-
-                        <p class="project__item-bottom-text">22 December,2022</p>
-                    </div>
-
-                    <img src="img/icon.svg" alt="icon" class="project__item-bottom-icon">
-                </div>
-                <!-- кнопка-тэг -->
-                <button class="blog__item-btn">Living Design</button>
-            </div>
-        </div>
-
-        <!-- 3 картинка блога -->
-        <div class="blog__wrapper">
-
-            <div class="blog__item">
-                <img src="img/Blog_Image03.png" alt="Blog_Image03" class="blog__item-img">
-                <h3 class="blog__item-title">Best For Any Office & Business Interior Solution</h3>
-
-                <div class="project__item-bottom">
-                    <div class="project__item-bottom-left">
-
-                        <p class="project__item-bottom-text">25 December,2022</p>
-                    </div>
-
-                    <img src="img/icon.svg" alt="icon" class="project__item-bottom-icon">
-                </div>
-                <!-- кнопка-тэг -->
-                <button class="blog__item-btn">Interior Design</button>
+                <button class="blog__item-btn">{{ item.btnText }}</button>
             </div>
         </div>
     </div>
+
 
     <!-- footer -->
 
@@ -227,6 +186,8 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="blogVue.js"></script>
 </body>
 
 </html>
